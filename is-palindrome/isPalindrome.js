@@ -3,3 +3,6 @@ const isPalindrome = (str) => {
   
   return revString === str;
 } 
+
+
+console.log(isPalindrome("FELIPE"))
