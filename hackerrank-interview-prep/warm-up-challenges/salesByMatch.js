@@ -1,5 +1,5 @@
-// Function that will return the numbers of pairs in the array
-function sockMerchant(n, arr) { // parameters
+
+function sockMerchant(n, arr) { 
 
   const sortedArr = arr.sort(); // sorting the array will help to check the pairs
   let currentPosition = 0; // to save the current position of each item in te array
