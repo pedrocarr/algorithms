@@ -17,3 +17,4 @@ const fizzBuzz = () => {
 const output = fizzBuzz();
 
 console.log(output);
+
