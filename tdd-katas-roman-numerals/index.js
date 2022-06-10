@@ -1,1 +1,1 @@
-const fucntion 
+const fucntion glovalcoo
