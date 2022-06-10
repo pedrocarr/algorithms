@@ -7,11 +7,19 @@
     "test": "jest"
   },
   "lint-staged": {
-    "*.js": ["standard"]
+    "*.js": [
+      "standard"
+    ]
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
+    "husky": "^8.0.1",
     "jest": "^28.1.1",
     "standard": "^17.0.0"
   }
