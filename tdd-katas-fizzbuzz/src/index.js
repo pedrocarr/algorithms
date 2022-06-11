@@ -1,11 +1,23 @@
-const solve = (n) => {
- const words = new Array();
-  if (n % 2 === 0) 
-    words.push("fizz")
-  if (n % 3 === 0) 
-    words.push("buzz")
-  return words.join(' ')
+const FIZZ = 'Fizz';
+const BUZZ = 'Buzz';
+
+
+const processInteger = (n) => {
+
+const divisibleBy5 = n % 5;
+const divisibleBy3 = n % 3;
+
+if(divisibleBy5 === 0 && divisibleBy3 === 0) 
+  return FIZZ + BUZZ 
+if(divisibleBy5 === 0) 
+  return BUZZ
+if(divisibleBy3 === 0) 
+  return FIZZ
+
+  return n
 }
 
 
-module.exports.solve = solve;
+module.exports.processInteger = processInteger;
+
+
