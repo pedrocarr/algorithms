@@ -1,3 +1,6 @@
-module.exports = const sumOfTwoDigitsOfNumbers = (a, b) => {
-  return a  * b 
+const solve = () => {
+  return 13
 }
+
+
+module.exports.solve = solve;
