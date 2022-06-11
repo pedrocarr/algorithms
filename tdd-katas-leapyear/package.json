@@ -1,0 +1,17 @@
+{
+  "name": "tdd-katas",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest __test__ --watch --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^28.1.1"
+  },
+  "dependencies": {
+    "prettier": "^2.6.2"
+  }
+}
