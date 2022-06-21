@@ -1,0 +1,15 @@
+{
+  "name": "tdd-katas-roman-numerals",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest __test__ --watch --verbose"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jest": "^28.1.1",
+    "prettier": "^2.7.1"
+  }
+}
