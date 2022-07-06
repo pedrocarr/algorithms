@@ -6,5 +6,6 @@ describe('romanNumeralGenerator', () => {
     expect(romanFor.romanNumeralGenerator(1)).toEqual("I")
     expect(romanFor.romanNumeralGenerator(2)).toEqual("II")
     expect(romanFor.romanNumeralGenerator(3)).toEqual("III")
+    expect(romanFor.romanNumeralGenerator(4)).toEqual("IV")
   });
 });

@@ -1,7 +1,19 @@
 const romanNumeralGenerator = (number) => {
-  if (number === 3) return "III";
-  if (number === 2) return "II";
-  return 'I';
+  const map = {
+    IV: 4,
+    III: 3,
+    II: 2,
+    I: 1,
+  };
+  let result = '';
+
+  for (key in map) {
+    result += key.repeat(Math.floor(number / map [key]));
+    number %= map[key];
+  }
+
+
+  return result;
 }
 
 module.exports.romanNumeralGenerator = romanNumeralGenerator;
