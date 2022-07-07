@@ -8,7 +8,7 @@ const romanNumeralGenerator = (number) => {
   let result = '';
 
   for (key in map) {
-    result += key.repeat(Math.floor(number / map [key]));
+    result += key.repeat(Math.floor(number / map[key]));
     number %= map[key];
   }
 
