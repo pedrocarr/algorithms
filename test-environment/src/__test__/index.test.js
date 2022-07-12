@@ -1,21 +1,46 @@
 const romanNumeralsGenerator = (number) => {
-  if (number == 3) {
-    return "III";
+  let roman = "";
+  const romanToDecimal = {
+    "X": 10,
+    "V": 5,
+    "I": 1,
   }
-  if (number == 2) {
-    return "II";
+ 
+
+  for (key in romanToDecimal) {
+    for(i = 0; i < number; i++)
+    if (number >= romanToDecimal[key]) {
+      roman += Object.keys(romanToDecimal).map(key => romanToDecimal[key][i])
+      number -= romanToDecimal[key]
+    }
+
   }
-  return "I";
+  // if(number >= 10) {
+  //   roman += 'X';
+  //   number -= 10;
+  // }
+  // if (number >= 5) {
+  //   roman += 'V';
+  //   number -= 5;
+  // }
+  // for (let i = 0; i < number; i++) {
+  //   roman += 'I';
+  // }
+  // return roman
 }
 
 
 
 describe('romanNumeralsGenerator', () => { //ARRANGE
 
-  it('should generate a roman numeral from a given decimal number', () => { // ASSERT
+  it('should generate a roman numeral for a given decimal number', () => { // ASSERT
 
     expect(romanNumeralsGenerator(1)).toEqual("I"); // ACT
     expect(romanNumeralsGenerator(2)).toEqual("II");
     expect(romanNumeralsGenerator(3)).toEqual("III");
+    expect(romanNumeralsGenerator(5)).toEqual("V");
+    expect(romanNumeralsGenerator(7)).toEqual("VII");
+    expect(romanNumeralsGenerator(10)).toEqual("X");
+    expect(romanNumeralsGenerator(18)).toEqual("XVIII");
   });
 });
