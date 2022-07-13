@@ -1,0 +1,13 @@
+{
+  "name": "codurance-interview",
+  "version": "1.0.0",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "test": "jest __test__ --watch --verbose"
+  },
+  "dependencies": {
+    "jest": "^28.1.2",
+    "prettier": "^2.7.1"
+  }
+}

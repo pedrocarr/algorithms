@@ -1,11 +1,23 @@
-const Rover = require('../index')
+
+
+class Rover {
+  execute(instructions) {
+    if (instructions === "R") {
+      return "0:0:E"
+    }
+    if (instructions === "RR") {
+      return "0:0:S"
+    }
+    return "0:0:N"
+  };
+}
 
 describe('rover test', () => {
 
   let rover;
 
   beforeEach(() => {
-     rover = new Rover();
+    rover = new Rover();
   });
 
   it("should when no instructions are given have innitial position 0:0:N",()=>{
