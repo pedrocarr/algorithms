@@ -35,6 +35,7 @@ describe('romanNumeralGenerator', () => {
       "IV": 4,
       "V": 5,
       "MMXIX": 2019,
+      "MMMCMXCIX": 3999
     }
 
     Object.entries(results).forEach(([key, value]) =>{
