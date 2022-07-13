@@ -8,7 +8,7 @@ describe('rover test', () => {
      rover = new Rover();
   });
 
-  it("should when no instructions are given have innitial position 0:0:N",()=>{
+  it("should when no instructions are given have initial position 0:0:N",()=>{
     expect(rover.execute("")).toBe("0:0:N");
 
   });
