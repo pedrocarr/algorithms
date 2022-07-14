@@ -38,8 +38,8 @@ describe('romanNumeralGenerator', () => {
       "MMMCMXCIX": 3999,
     }
 
-    Object.entries(results).forEach(([key, value]) => {
-        expect(romanNumeralGenerator(value)).toBe(key);
-    });
+    Object.entries(results).forEach(([key, value]) =>{
+      expect(romanNumeralGenerator(value)).toBe(key)
+    })
   });
 })
