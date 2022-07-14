@@ -26,7 +26,7 @@ const romanNumeralGenerator = (decimal) => {
 
 describe('romanNumeralGenerator', () => {
 
-  it("should convert a roman numeral for a given decimal number",()=>{
+  it("should convert a roman numeral for a given decimal number",() => {
 
     const results = {
       "I": 1,
@@ -35,12 +35,11 @@ describe('romanNumeralGenerator', () => {
       "IV": 4,
       "V": 5,
       "MMXIX": 2019,
-      "MMMCMXCIX": 3999
+      "MMMCMXCIX": 3999,
     }
 
-    Object.entries(results).forEach(([key, value]) =>{
+    Object.entries(results).forEach(([key, value]) => {
         expect(romanNumeralGenerator(value)).toBe(key);
     });
   });
-
 })
