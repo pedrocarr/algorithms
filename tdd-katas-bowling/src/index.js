@@ -1,11 +1,8 @@
 
 
 const calcScore = (rolls) => {
-  const rollsSum = rolls.reduce((a, b) => a + b);
-  
-  return rollsSum;
-  
+const sumRolls = rolls.reduce((sum, roll) => sum + roll)
+
+return sumRolls
 }
-
-
 module.exports = calcScore;
