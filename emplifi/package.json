@@ -1,0 +1,12 @@
+{
+  "name": "emplifi",
+  "version": "1.0.0",
+  "description": "",
+  "main": "emplifi.js",
+  "scripts": {
+    "start": "node emplifi"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
