@@ -36,12 +36,10 @@ const contacts = [{
 }
 ];
 
-const filterContacts = (id, name) => {
-  return id, name
+const filterContacts = () => {
+  return contacts.find(contact => contact.name === 'John')
 }
 
-const filter = contacts
-              .filter(contact => contact.name === 'John')
              
 
-console.log(filter)
+console.log(filterContacts())
