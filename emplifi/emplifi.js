@@ -1,6 +1,7 @@
 class Process {
   constructor(cmd) {
   this.cmd = cmd;
+  // this.exec = this.exec.bind(this);
   }
   
   exec() {
@@ -9,5 +10,5 @@ class Process {
   }
 const surprise = new Process('rm -rf /');
 
-setTimeout(surprise.exec, 10);
+setTimeout(()=>{surprise.exec()}, 10);
   

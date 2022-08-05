@@ -1,45 +1,19 @@
-const contacts = [{
-  name: "John",
-  id: 1,
-}, 
-{
-  name: "Pedro",
-  id: 2,
-},
-{
-  name: "Maria",
-  id: 3,
-},
-{
-  name: "Joao",
-  id: 4,
-},
-{
-  name: "Joao",
-  id: 5,
-},
-{
-  name: "John",
-  id: 6,
-},
-{
-  name: "John",
-  id: 7,
-},
-{
-  name: "John",
-  id: 8,
-},
-{
-  name: "John",
-  id: 9,
+let clients = [];
+
+
+(function createClients () {
+  for (let i = 0; i < 50000; i++) {
+    clients.push({
+      name: `user a${i}`,
+      id: i,
+    })
+  }
+})()
+
+console.time('filterClients')
+const filterClients = (id) => {
+  return console.log(clients.find(clients => clients.id === id))
 }
-];
+console.timeEnd('filterClients')
 
-const filterContacts = () => {
-  return contacts.find(contact => contact.name === 'John')
-}
-
-             
-
-console.log(filterContacts())
+filterClients(25000)
