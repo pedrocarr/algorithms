@@ -10,10 +10,14 @@ let clients = [];
   }
 })()
 
-console.time('filterClients')
-const filterClients = (id) => {
-  return console.log(clients.find(clients => clients.id === id))
-}
-console.timeEnd('filterClients')
+// const arrayToObject = Object.assign({}, clients);
 
-filterClients(25000)
+
+
+// console.time('filterClients')
+// const filterClients = (id) => {
+//   return console.log(arrayToObject.filter(clients => clients.id === id))
+// }
+// console.timeEnd('filterClients')
+
+// filterClients(25000)
