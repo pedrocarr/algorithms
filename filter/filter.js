@@ -10,14 +10,21 @@ let clients = [];
   }
 })()
 
-// const arrayToObject = Object.assign({}, clients);
+const obj = Object.assign(clients, {});
 
+// console.log(obj)
 
+console.time('filterClientsObj')
+const filterClientsObj = (id) => {
+  return console.log(obj.find(contact => contact.id === id))
+}
+console.timeEnd('filterClientsObj')
 
-// console.time('filterClients')
-// const filterClients = (id) => {
-//   return console.log(arrayToObject.filter(clients => clients.id === id))
-// }
-// console.timeEnd('filterClients')
+console.time('filterClientsArray')
+const filterClientsArray = (id) => {
+  return console.log(clients.find(clients => clients.id === id))
+}
+console.timeEnd('filterClientsArray')
 
-// filterClients(25000)
+filterClientsObj(25000)
+filterClientsArray(25000)
