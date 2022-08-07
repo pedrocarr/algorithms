@@ -1,4 +1,4 @@
-const fizzBuzz = () => {
+(function fizzBuzz() {
   for(let i = 1; i <= 100; i++) {
       if(i % 15 === 0) {
           console.log('FizzBuzz');
@@ -10,11 +10,6 @@ const fizzBuzz = () => {
           console.log(i);
       }
   }
-}
+})()
 
-// call function
-
-const output = fizzBuzz();
-
-console.log(output);
 
