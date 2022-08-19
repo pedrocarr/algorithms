@@ -20,4 +20,4 @@ function callApi(name) {
     })
 }
 
-callApi('PEHEHEHENEE')
+callApi('Pedro')
