@@ -10,7 +10,7 @@ const bubbleSort = (nums) => {
                 temp = nums[i + 1];
                 swapped = true;
             }
-        } 
+        }
     } while (swapped)
     console.log(nums);
     return nums;

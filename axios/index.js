@@ -2,7 +2,7 @@ const axios = require('axios');
 
 
 function callApi(name) {
-  
+
   if (typeof name != 'string') throw new Error('not a string')
   if (name === '') throw new Error('string is empty')
 
@@ -14,9 +14,9 @@ function callApi(name) {
     axios
       .get(url, {name: name})
       .then((response) => resolve(console.log(response.data)))
-      .catch((err) => 
+      .catch((err) =>
         reject(err))
-      
+
     })
 }
 

@@ -8,10 +8,10 @@ function bynarySearch(arr, num) {
     if(arr[mid] < num){
       start = mid + 1;
       if(arr[start] > num) return start;
-    
+
 
     }else {
-      end = mid;    
+      end = mid;
     }
   }
 
@@ -35,7 +35,7 @@ function triplets(a, b, c) {
     if(num < a[0] || num < c[0]) continue;
 
     let ai = 0;
-    let ci = 0; 
+    let ci = 0;
     if(a[a.length - 1] <= num){
       ai = a.length;
     } else {

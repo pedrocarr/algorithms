@@ -22,6 +22,6 @@ const romanNumeralGenerator = (decimal) => {
     }
   })
   return roman
-} 
+}
 
 module.exports.romanNumeralGenerator = romanNumeralGenerator;

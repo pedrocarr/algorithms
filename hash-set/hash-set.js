@@ -2,7 +2,7 @@ class MyHashSet {
   constructor() {
       this.data = []
   }
-  
+
   contains(key){
       if (this.data.includes(key)) {
           return true
