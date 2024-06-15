@@ -7,8 +7,6 @@ async function getPeople(name) {
   const url = `https://swapi.dev/api/people/?search=${name}`
   const result = await get(url)
 
-  console.log(result.data)
-
   const nameAndMass = result.data.results.map(mapPeople)
 
   return nameAndMass
