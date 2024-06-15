@@ -21,7 +21,7 @@ function getUserAddress(userId) {
 setInterval(() => {
   main()
 }, 2000)
-// main()
+main()
 async function main() {
   try {
     console.time('Promise')
