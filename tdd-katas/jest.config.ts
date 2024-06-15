@@ -1,9 +1,7 @@
-import type {Config} from '@jest/types';
-// Sync object
-const config: Config.InitialOptions = {
-  verbose: true,
-  transform: {
-  ‘^.+\\.tsx?$’: ‘ts-jest’,
-  },
+import type {Config} from 'jest';
+
+export default async (): Promise<Config> => {
+  return {
+    verbose: true,
+  };
 };
-export default config;

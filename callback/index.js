@@ -14,9 +14,7 @@ function getUserTelephone(userId) {
 
 function getUserAddress(userId) {
   return new Promise(function (resolve, reject) {
-    setInterval(() => {
       return resolve({ address: 'Rua X, 123' });
-    }, 1000)
   })
 }
 
