@@ -15,10 +15,7 @@ function App() {
   const [fruitsData, setFruitsData] = useState(fruits)
 
   const handleTextChange = (e) => {
-    setTimeout(() => {
-
       setTextChange(e.target.value)
-    }, 1000);
     // console.log(textChange)
   }
 
