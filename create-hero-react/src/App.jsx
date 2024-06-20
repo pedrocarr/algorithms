@@ -1,5 +1,5 @@
 import "./App.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 
 const style = {
   margin: 10,
@@ -7,10 +7,13 @@ const style = {
 
 function App() {
   const [name, setName] = useState("");
-  const [age, setAge] = useState(null);
-  const [height, setHeight] = useState(null);
+  const [age, setAge] = useState(0);
+  const [height, setHeight] = useState(0);
   const [power, setPower] = useState("");
   const [button, setButton] = useState(false);
+
+  const clearInput = useRef(null)
+
 
   const handleName = (event) => {
     setName(event.target.value);
@@ -30,10 +33,11 @@ function App() {
 
   const handleDisplayCharacter = () => {
     setButton(true)
+    clearInput.current.value = ""
 
     const timer = setTimeout(() => {
       setButton(false)
-    }, 3000)
+    }, 5000)
 
     return () => clearTimeout(timer)
   }
@@ -43,13 +47,13 @@ function App() {
       <div>
         <h1>CREATING A HERO</h1>
         <label>Name </label>
-        <input type="text" onChange={handleName} style={style} />
+        <input ref={clearInput} type="text" onChange={handleName} style={style} />
         <label>Age </label>
-        <input type="number" onChange={handleAge} style={style} />
+        <input ref={clearInput} type="number" onChange={handleAge} style={style} />
         <label>Height </label>
-        <input type="text" onChange={handleHeight} style={style} />
+        <input ref={clearInput} type="text" onChange={handleHeight} style={style} />
         <label>Super Power</label>
-        <input type="text" onChange={handleSuperPower} style={style} />
+        <input ref={clearInput} type="text" onChange={handleSuperPower} style={style} />
       </div>
       <button onClick={handleDisplayCharacter}>Display Hero</button>
       {button && (
