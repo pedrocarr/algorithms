@@ -42,12 +42,18 @@ function App() {
     return () => clearTimeout(timer)
   }
 
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      handleDisplayCharacter();
+    }
+  };
+
   return (
     <div className="App">
       <div>
         <h1>CREATING A HERO</h1>
         <label>Name </label>
-        <input ref={clearInput} type="text" onChange={handleName} style={style} />
+        <input ref={clearInput} type="text" onChange={handleName} style={style} onKeyPress={handleKeyPress} />
         <label>Age </label>
         <input ref={clearInput} type="number" onChange={handleAge} style={style} />
         <label>Height </label>
