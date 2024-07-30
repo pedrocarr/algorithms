@@ -9,7 +9,11 @@ function App() {
   const [power, setPower] = useState("");
   const [button, setButton] = useState(false);
 
-  const clearInput = useRef(null)
+  const clearNameInput = useRef(null)
+
+
+
+
 
 
   const handleName = (event) => {
@@ -30,7 +34,7 @@ function App() {
 
   const handleDisplayCharacter = () => {
     setButton(true)
-    clearInput.current.value = ""
+    clearNameInput.current.value = ""
 
     const timer = setTimeout(() => {
       setButton(false)
@@ -39,26 +43,20 @@ function App() {
     return () => clearTimeout(timer)
   }
 
-  const handleKeyPress = (event) => {
-    if (event.key === 'Enter') {
-      handleDisplayCharacter();
-    }
-  };
-
   return (
     <div className="text-center">
       <div>
         <h1 className="text-3xl font-bold hover:bg-red-500 text-black mb-4">CREATING A HERO</h1>
         <label className="font-semibold m-2">Name</label>
-        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleName} onKeyPress={handleKeyPress} />
+        <input className="m-2 p-1" ref={clearNameInput} type="text" onChange={handleName} />
         <label className="font-semibold m-2">Age</label>
-        <input className="m-2 p-1" ref={clearInput} type="number" onChange={handleAge} />
+        <input className="m-2 p-1" type="number" onChange={handleAge} />
         <label className="font-semibold m-2">Height</label>
-        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleHeight} />
+        <input className="m-2 p-1" type="number" onChange={handleHeight} />
         <label className="font-semibold m-2">Super Power</label>
-        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleSuperPower} />
+        <input className="m-2 p-1" type="text" onChange={handleSuperPower} />
       </div>
-      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4"onClick={handleDisplayCharacter}>Display Hero</button>
+      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4" onClick={handleDisplayCharacter}>Display Hero</button>
       {button && (
         <div>
           <h1 className="text-2xl mt-4">MY HERO</h1>
