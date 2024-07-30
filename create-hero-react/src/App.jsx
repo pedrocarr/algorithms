@@ -1,9 +1,6 @@
-import "./App.css";
 import { useState, useRef } from "react";
 
-const style = {
-  margin: 10,
-};
+
 
 function App() {
   const [name, setName] = useState("");
@@ -49,22 +46,22 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="text-center">
       <div>
-        <h1>CREATING A HERO</h1>
-        <label>Name </label>
-        <input ref={clearInput} type="text" onChange={handleName} style={style} onKeyPress={handleKeyPress} />
-        <label>Age </label>
-        <input ref={clearInput} type="number" onChange={handleAge} style={style} />
-        <label>Height </label>
-        <input ref={clearInput} type="text" onChange={handleHeight} style={style} />
-        <label>Super Power</label>
-        <input ref={clearInput} type="text" onChange={handleSuperPower} style={style} />
+        <h1 className="text-3xl font-bold hover:bg-red-500 text-black mb-4">CREATING A HERO</h1>
+        <label className="font-semibold m-2">Name</label>
+        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleName} onKeyPress={handleKeyPress} />
+        <label className="font-semibold m-2">Age</label>
+        <input className="m-2 p-1" ref={clearInput} type="number" onChange={handleAge} />
+        <label className="font-semibold m-2">Height</label>
+        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleHeight} />
+        <label className="font-semibold m-2">Super Power</label>
+        <input className="m-2 p-1" ref={clearInput} type="text" onChange={handleSuperPower} />
       </div>
-      <button onClick={handleDisplayCharacter}>Display Hero</button>
+      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4"onClick={handleDisplayCharacter}>Display Hero</button>
       {button && (
         <div>
-          <h1>MY HERO</h1>
+          <h1 className="text-2xl mt-4">MY HERO</h1>
 
           <p><strong>Name:</strong> {name}</p>
 
