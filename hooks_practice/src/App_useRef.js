@@ -26,18 +26,21 @@ const style = {
 function AppUseRef() {
 
 
-  const myBtn = useRef(null);
+  const [count, setCount] = useState(0);
+  const countRef = useRef(0);
 
   useEffect(() => {
-    console.log(myBtn.current)
-  },[])
+    countRef.current = count;
+  }, [count])
 
   return (
     <div style={style}>
-    <h1>useRef</h1>
-    <button onClick={()=> console.log(myBtn.current)} style={buttonStyle} ref={myBtn}>useRef</button>
+      <h1>useRef</h1>
+      <button style={buttonStyle} onClick={() => setCount(count + 1)}>{count}</button>
+      <h2>Previous: {countRef.current}</h2>
     </div>
   );
+
 
 }
 

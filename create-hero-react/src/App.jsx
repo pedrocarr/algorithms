@@ -56,7 +56,9 @@ function App() {
         <label className="font-semibold m-2">Super Power</label>
         <input className="m-2 p-1" type="text" onChange={handleSuperPower} />
       </div>
-      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4" onClick={handleDisplayCharacter}>Display Hero</button>
+      <button className="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded mt-4"
+        onClick={handleDisplayCharacter}>Display Hero
+      </button>
       {button && (
         <div>
           <h1 className="text-2xl mt-4">MY HERO</h1>
