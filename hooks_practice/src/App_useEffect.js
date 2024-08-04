@@ -12,6 +12,15 @@ const buttonStyle = {
   cursor: "pointer"
 }
 
+const style = {
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  justifyContent: "center",
+  height: "100vh",
+  backgroundColor: "lightblue"
+}
+
 
 
 function AppUseEffect() {
@@ -24,7 +33,7 @@ function AppUseEffect() {
     fetch('foo').then(() => setLoaded(true))
     console.log('useEffect')
 
-  })
+  },[])
 
   useEffect(() => {
     alert('Component has been mounted')
@@ -36,7 +45,10 @@ function AppUseEffect() {
   },[])
 
   return (
+    <div style={style}>
+      <h1>useEffect</h1>
     <button style={buttonStyle} onClick={() => setCount(count + 1)}>{count}</button>
+    </div>
   );
 
 }
