@@ -40,8 +40,6 @@ function AppUseRef() {
       <h2>Previous: {countRef.current}</h2>
     </div>
   );
-
-
 }
 
 export default AppUseRef;

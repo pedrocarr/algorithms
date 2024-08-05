@@ -7,6 +7,8 @@ import reportWebVitals from './reportWebVitals';
 import AppUseEffect from './App_useEffect';
 import AppUseContext from './App_useContext';
 import AppUseRef from './App_useRef';
+import AppUseReducer from './App_useReducer';
+import AppUseMemo from './App_useMemo';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -14,7 +16,9 @@ root.render(
     {/* <AppUseEffect/> */}
     {/* <App/> */}
     {/* <AppUseContext/> */}
-    <AppUseRef/>
+    {/* <AppUseRef/> */}
+    {/* <AppUseReducer/> */}
+    <AppUseMemo/>
   </React.StrictMode>
 );
 
