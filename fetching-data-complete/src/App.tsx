@@ -32,6 +32,8 @@ export function App() {
       }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       catch (error: any) {
+
+        // if the error is an AbortError, it means that the request was cancelled
         if (error.name === 'AbortError') {
           console.log('Fetch aborted')
           return
