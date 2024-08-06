@@ -7,7 +7,6 @@ type Post = {
   title: string
 }
 
-
 export function App() {
   const [isLoading, setIsLoading] = useState(false)
   const [posts, setPosts] = useState<Post[]>([])
@@ -15,11 +14,12 @@ export function App() {
   const [page, setPage] = useState(0)
   const abortControllerRef = useRef<AbortController | null>(null);
 
-
-
   useEffect(() => {
     const fecthPosts = async () => {
+      // this is going to cancel the previous request if it's still pending
+      // race condition
       abortControllerRef.current?.abort()
+      // create a new AbortController instance beaciuse the previous one is aborted
       abortControllerRef.current = new AbortController()
       setIsLoading(true)
 
@@ -44,8 +44,6 @@ export function App() {
     }
 
     fecthPosts()
-
-
   }, [page])
 
 
