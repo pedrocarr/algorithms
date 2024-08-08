@@ -9,7 +9,7 @@ function App() {
   const [power, setPower] = useState("");
   const [button, setButton] = useState(false);
 
-  const clearNameInput = useRef(null)
+  const clearNameInputRef = useRef(null)
 
 
 
@@ -34,7 +34,7 @@ function App() {
 
   const handleDisplayCharacter = () => {
     setButton(true)
-    clearNameInput.current.value = ""
+    clearNameInputRef.current.value = ""
 
     const timer = setTimeout(() => {
       setButton(false)
@@ -48,7 +48,7 @@ function App() {
       <div>
         <h1 className="text-3xl font-bold hover:bg-red-500 text-black mb-4">CREATING A HERO</h1>
         <label className="font-semibold m-2">Name</label>
-        <input className="m-2 p-1" ref={clearNameInput} type="text" onChange={handleName} />
+        <input className="m-2 p-1" ref={clearNameInputRef} type="text" onChange={handleName} />
         <label className="font-semibold m-2">Age</label>
         <input className="m-2 p-1" type="number" onChange={handleAge} />
         <label className="font-semibold m-2">Height</label>

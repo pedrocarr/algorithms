@@ -1,24 +1,25 @@
-import { useEffect, useRef, useState } from 'react'
+import { useState } from "react";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 
+import Demo from "./Demo";
 
-export function App() {
-  const [count, setCount] = useState(0)
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+    },
+  },
+});
 
-
-  const countRef = useRef(0)
-
-  useEffect(() => {
-    countRef.current = count
-    console.log('useEffect', countRef.current);
-
-  }, [count])
+function App() {
+  const [showDemo, setShowDemo] = useState(true);
 
   return (
-    <>
-      <h1>Count: {count}</h1>
-      <h1>Previous: {countRef.current}</h1>
-      <button onClick={() => setCount(count + 1)}>Increment</button>
-    </>
-  )
+    <QueryClientProvider client={queryClient}>
+      <button onClick={() => setShowDemo(!showDemo)}>Toggle Demo</button>
+      {showDemo && <Demo />}
+    </QueryClientProvider>
+  );
 }
 
+export default App;
