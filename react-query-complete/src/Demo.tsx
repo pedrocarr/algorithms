@@ -10,8 +10,8 @@ export default function Demo() {
   const [search, setSearch] = useState("");
   const [title, setTitle] = useState("");
 
-  const { data, isLoading } = useQuery({
-    queryKey: ["data", { search }],
+  const { data: todos, isLoading } = useQuery({
+    queryKey: ["todos", { search }],
     queryFn: () => fetchTodos(search),
     // staleTime: Infinity,
 
@@ -20,7 +20,7 @@ export default function Demo() {
   const { mutateAsync: addTodoMutation } = useMutation({
     mutationFn: addTodo,
     onSuccess: () => {
-      queryClient.invalidateQueries({ queryKey: ["data"] });
+      queryClient.invalidateQueries({ queryKey: ["todos"] });
     },
 
   });
@@ -50,7 +50,7 @@ export default function Demo() {
           Add Todo
         </button>
       </div>
-      {data?.map((todo) => (
+      {todos?.map((todo) => (
         <TodoCard key={todo.id} todo={todo} />
       ))}
     </div>
