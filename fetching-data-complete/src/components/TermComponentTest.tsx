@@ -62,7 +62,7 @@ const terms: Term[] = [
  * If no parentId is set, returns terms without parents (first level of hierarchy)
  * @param parentId
  */
-export async function fetchTerms(parentId?: number) {
+async function fetchTerms(parentId?: number) {
   await delay(2000); // mocking slow backend response
   return terms.filter((term) => term.parentId === parentId);
 }
@@ -86,18 +86,28 @@ export async function fetchTerms(parentId?: number) {
 
 export default function TermComponentTest() {
   const [terms, setTerms] = useState<Term[]>([]);
+  const [error, setError] = useState();
 
   useEffect(() => {
     const fetchData = async () => {
-      const response = await fetchTerms();
-      setTerms(response);
+      try {
+        const response = await fetchTerms();
+        setTerms(response);
+      } catch (e: any) {
+        setError(e);
+      }
+
     };
 
     fetchData();
   }, []);
 
+  if (error) {
+    return <div>Something went wrong. Try it again!!!</div>;
+  }
+
   return (
-    <div className="App">
+    <div>
       <h1>Business Glossary</h1>
       <ul>
         {terms.map((term) => (
@@ -109,35 +119,36 @@ export default function TermComponentTest() {
 }
 
 function TermComponent({ term }: { term: Term }) {
-  const [children, setChildren] = useState<Term[]>([]);
-  const [isLoading, setIsLoading] = useState<boolean>(true);
+  const [childTerms, setChildTerms] = useState<Term[]>([]);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   useEffect(() => {
-    const fetchChildren = async () => {
+    const fetchterms = async () => {
       if (term.hasChildren) {
+        setIsLoading(true);
         const response = await fetchTerms(term.id);
-        setChildren(response);
+        setChildTerms(response);
       }
       setIsLoading(false);
     };
 
-    fetchChildren();
+    fetchterms();
   }, [term]);
 
   return (
-    <li>
+    <ul>
       {term.name}
       {isLoading ? (
         <p>Loading...</p>
       ) : (
-        children.length > 0 && (
+        childTerms.length > 0 && (
           <ul>
-            {children.map((child) => (
+            {childTerms.map((child) => (
               <TermComponent key={child.id} term={child} />
             ))}
           </ul>
         )
       )}
-    </li>
+    </ul>
   );
 }
