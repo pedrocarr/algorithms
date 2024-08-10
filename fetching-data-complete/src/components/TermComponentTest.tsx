@@ -85,16 +85,21 @@ async function fetchTerms(parentId?: number) {
  */
 
 export default function TermComponentTest() {
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const [terms, setTerms] = useState<Term[]>([]);
   const [error, setError] = useState();
 
+
   useEffect(() => {
     const fetchData = async () => {
+      setIsLoading(true);
       try {
         const response = await fetchTerms();
         setTerms(response);
       } catch (e: any) {
         setError(e);
+      } finally {
+        setIsLoading(false);
       }
 
     };
@@ -109,6 +114,7 @@ export default function TermComponentTest() {
   return (
     <div>
       <h1>Business Glossary</h1>
+      {isLoading && <p>Loading...</p>}
       <ul>
         {terms.map((term) => (
           <TermComponent key={term.id} term={term} />
@@ -124,10 +130,18 @@ function TermComponent({ term }: { term: Term }) {
 
   useEffect(() => {
     const fetchterms = async () => {
+      setIsLoading(true);
+
       if (term.hasChildren) {
-        setIsLoading(true);
-        const response = await fetchTerms(term.id);
-        setChildTerms(response);
+
+        try {
+          const response = await fetchTerms(term.id);
+          setChildTerms(response);
+        } catch (e: any) {
+          console.error(e);
+        } finally {
+          setIsLoading(false);
+        }
       }
       setIsLoading(false);
     };
