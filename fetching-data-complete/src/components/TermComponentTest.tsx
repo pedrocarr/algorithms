@@ -96,6 +96,7 @@ export default function TermComponentTest() {
       try {
         const response = await fetchTerms();
         setTerms(response);
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (e: any) {
         setError(e);
       } finally {
@@ -137,6 +138,7 @@ function TermComponent({ term }: { term: Term }) {
         try {
           const response = await fetchTerms(term.id);
           setChildTerms(response);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (e: any) {
           console.error(e);
         } finally {
