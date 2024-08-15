@@ -6,6 +6,7 @@ import {UseStateDemo} from './components/UseStateDemo'
 import UseEffectDemo from './components/useEffectDemo.tsx'
 import UseMemoDemo from './components/useMemoDemo.tsx'
 import TermComponentTest from './components/TermComponentTest.tsx'
+import ParentComponent from './components/TestParentComponent.tsx'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <UseStateDemo /> */}
     {/* <UseEffectDemo /> */}
     {/* <UseMemoDemo /> */}
-    <TermComponentTest/>
+    {/* <TermComponentTest/> */}
+    <ParentComponent/>
   </React.StrictMode>,
 )
