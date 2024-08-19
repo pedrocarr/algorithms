@@ -10,6 +10,7 @@ import ParentComponent from './components/TestParentComponent.tsx'
 import PokemonComponent from './pages/Pokemon.tsx'
 import UseReducerComponent from './components/useReducer.tsx'
 import UseReducerDemo from './components/useReducerDemo.tsx'
+import ThreeComponent from './components/ThreeComponent.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -22,6 +23,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <ParentComponent/> */}
     {/* <PokemonComponent/> */}
     {/* <UseReducerComponent/> */}
-    <UseReducerDemo/>
+    {/* <UseReducerDemo/> */}
+    <ThreeComponent/>
   </React.StrictMode>,
 )
