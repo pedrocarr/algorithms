@@ -7,6 +7,10 @@ import UseEffectDemo from './components/useEffectDemo.tsx'
 import UseMemoDemo from './components/useMemoDemo.tsx'
 import TermComponentTest from './components/TermComponentTest.tsx'
 import ParentComponent from './components/TestParentComponent.tsx'
+import PokemonComponent from './pages/Pokemon.tsx'
+import UseReducerComponent from './components/useReducer.tsx'
+import UseReducerDemo from './components/useReducerDemo.tsx'
+
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
@@ -15,6 +19,9 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <UseEffectDemo /> */}
     {/* <UseMemoDemo /> */}
     {/* <TermComponentTest/> */}
-    <ParentComponent/>
+    {/* <ParentComponent/> */}
+    {/* <PokemonComponent/> */}
+    {/* <UseReducerComponent/> */}
+    <UseReducerDemo/>
   </React.StrictMode>,
 )

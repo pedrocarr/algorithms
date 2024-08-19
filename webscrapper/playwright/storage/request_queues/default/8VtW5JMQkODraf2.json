@@ -1,0 +1,9 @@
+{
+	"id": "8VtW5JMQkODraf2",
+	"json": "{\"id\":\"8VtW5JMQkODraf2\",\"url\":\"https://warehouse-theme-metal.myshopify.com/products/denon-ah-c720-in-ear-headphones\",\"loadedUrl\":\"https://warehouse-theme-metal.myshopify.com/products/denon-ah-c720-in-ear-headphones\",\"uniqueKey\":\"https://warehouse-theme-metal.myshopify.com/products/denon-ah-c720-in-ear-headphones\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"__crawlee\":{\"enqueueStrategy\":\"same-hostname\",\"state\":4}},\"handledAt\":\"2024-08-18T21:20:43.570Z\"}",
+	"method": "GET",
+	"orderNo": null,
+	"retryCount": 0,
+	"uniqueKey": "https://warehouse-theme-metal.myshopify.com/products/denon-ah-c720-in-ear-headphones",
+	"url": "https://warehouse-theme-metal.myshopify.com/products/denon-ah-c720-in-ear-headphones"
+}
