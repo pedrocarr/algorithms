@@ -1,6 +1,6 @@
 {
 	"id": "3SxhtOPvkDhwINc",
-	"json": "{\"id\":\"3SxhtOPvkDhwINc\",\"url\":\"https://www.mercadolivre.com.br/ofertas\",\"loadedUrl\":\"https://www.mercadolivre.com.br/ofertas\",\"uniqueKey\":\"https://www.mercadolivre.com.br/ofertas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"start-url\",\"__crawlee\":{\"state\":4}},\"handledAt\":\"2024-08-18T21:39:17.131Z\"}",
+	"json": "{\"id\":\"3SxhtOPvkDhwINc\",\"url\":\"https://www.mercadolivre.com.br/ofertas\",\"loadedUrl\":\"https://www.mercadolivre.com.br/ofertas\",\"uniqueKey\":\"https://www.mercadolivre.com.br/ofertas\",\"method\":\"GET\",\"noRetry\":false,\"retryCount\":0,\"errorMessages\":[],\"headers\":{},\"userData\":{\"label\":\"start-url\",\"__crawlee\":{\"state\":4}},\"handledAt\":\"2024-08-19T10:41:47.200Z\"}",
 	"method": "GET",
 	"orderNo": null,
 	"retryCount": 0,

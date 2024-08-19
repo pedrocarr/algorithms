@@ -1,19 +1,25 @@
 import { PlaywrightCrawler, Dataset } from 'crawlee';
 
 const crawler = new PlaywrightCrawler({
-  // We removed the headless: false option to hide the browser windows.
   requestHandler: async ({ parseWithCheerio, request, enqueueLinks }) => {
     console.log(`Fetching URL: ${request.url}`);
+
+    const $ = await parseWithCheerio();
 
     if (request.label === 'start-url') {
       await enqueueLinks({
         selector: 'a.promotion-item__link-container',
       });
+      const nextPageLink = $('a.ui-search-link').attr('href');
+      if (nextPageLink) {
+        await requestQueue.addRequest({
+          url: nextPageLink,
+          label: 'start-url',
+        });
+      }
       return;
     }
 
-    // Fourth, parse the browser's page with Cheerio.
-    const $ = await parseWithCheerio();
 
     const title = $('h1').text().trim()
 
