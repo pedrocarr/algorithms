@@ -1,6 +1,5 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import { App } from './App.tsx'
 import './index.css'
 import {UseStateDemo} from './components/UseStateDemo'
 import UseEffectDemo from './components/useEffectDemo.tsx'
@@ -11,6 +10,8 @@ import PokemonComponent from './pages/Pokemon.tsx'
 import UseReducerComponent from './components/useReducer.tsx'
 import UseReducerDemo from './components/useReducerDemo.tsx'
 import ThreeComponent from './components/ThreeComponent.tsx'
+import FolderComponent from './components/FolderComponent.tsx'
+import App from './components/NewTermComponent.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -24,6 +25,6 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <PokemonComponent/> */}
     {/* <UseReducerComponent/> */}
     {/* <UseReducerDemo/> */}
-    <ThreeComponent/>
+    <App/>
   </React.StrictMode>,
 )
