@@ -1,18 +1,19 @@
 // main.js
-import { CheerioCrawler, log, KeyValueStore } from 'crawlee';
+import { CheerioCrawler, KeyValueStore, log } from 'crawlee';
 import { router } from './routes.js';
-import { BASE_URL } from './constants.js';
 
+// Grab our keyword from the input
 const { keyword = 'iphone' } = (await KeyValueStore.getInput()) ?? {};
 
 const crawler = new CheerioCrawler({
     requestHandler: router,
 });
 
+// Add our initial requests
 await crawler.addRequests([
     {
-        // Use BASE_URL here instead
-        url: `${BASE_URL}/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=${keyword}`,
+        // Turn the inputted keyword into a link we can make a request with
+        url: `https://www.amazon.com/s/ref=nb_sb_noss?url=search-alias%3Daps&field-keywords=${keyword}`,
         label: 'START',
         userData: {
             keyword,

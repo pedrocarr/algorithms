@@ -1,43 +1,66 @@
 // routes.js
-import { createCheerioRouter } from 'crawlee';
-import { BASE_URL } from './constants.js';
+import { createCheerioRouter, Dataset } from 'crawlee';
+import { BASE_URL, labels } from './constants.js';
 
 export const router = createCheerioRouter();
 
-router.addDefaultHandler(({ log }) => {
-    log.info('Route reached.');
-});
-
-// Add a handler to our router to handle requests with the 'START' label
-router.addHandler('START', async ({ $, crawler, request }) => {
+router.addHandler(labels.START, async ({ $, crawler, request }) => {
     const { keyword } = request.userData;
 
     const products = $('div > div[data-asin]:not([data-asin=""])');
 
-    // loop through the resulting products
     for (const product of products) {
         const element = $(product);
         const titleElement = $(element.find('.a-text-normal[href]'));
 
         const url = `${BASE_URL}${titleElement.attr('href')}`;
 
-        // scrape some data from each and to a request
-        // to the crawler for its page
-        await crawler.addRequests([{
-            url,
-            label: 'PRODUCT',
-            userData: {
-                // Pass the scraped data about the product to the next
-                // request so that it can be used there
-                data: {
-                    title: titleElement.first().text().trim(),
-                    asin: element.attr('data-asin'),
-                    itemUrl: url,
-                    keyword,
+        await crawler.addRequests([
+            {
+                url,
+                label: labels.PRODUCT,
+                userData: {
+                    data: {
+                        title: titleElement.first().text().trim(),
+                        asin: element.attr('data-asin'),
+                        itemUrl: url,
+                        keyword,
+                    },
                 },
             },
-        }]);
+        ]);
     }
 });
 
-router.addHandler('PRODUCT', ({ log }) => log.info('on a product page!'));
+router.addHandler(labels.PRODUCT, async ({ $, crawler, request }) => {
+    const { data } = request.userData;
+
+    const element = $('div#productDescription');
+
+    await crawler.addRequests([
+        {
+            url: `${BASE_URL}/gp/aod/ajax/ref=auto_load_aod?asin=${data.asin}&pc=dp`,
+            label: labels.OFFERS,
+            userData: {
+                data: {
+                    ...data,
+                    description: element.text().trim(),
+                },
+            },
+        },
+    ]);
+});
+
+router.addHandler(labels.OFFERS, async ({ $, request }) => {
+    const { data } = request.userData;
+
+    for (const offer of $('#aod-offer')) {
+        const element = $(offer);
+
+        await Dataset.pushData({
+            ...data,
+            sellerName: element.find('div[id*="soldBy"] a[aria-label]').text().trim(),
+            offer: element.find('.a-price .a-offscreen').text().trim(),
+        });
+    }
+});
