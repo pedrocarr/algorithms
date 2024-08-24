@@ -68,6 +68,7 @@ async function fetchTerms(parentId?: number) {
 }
 
 
+
 export default function App() {
   const [terms, setTerms] = useState<Term[]>([])
 
