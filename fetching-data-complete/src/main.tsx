@@ -12,6 +12,7 @@ import UseReducerDemo from './components/useReducerDemo.tsx'
 import ThreeComponent from './components/ThreeComponent.tsx'
 import FolderComponent from './components/FolderComponent.tsx'
 import App from './components/NewTermComponent.tsx'
+import Page from './components/TermTest.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -25,6 +26,7 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <PokemonComponent/> */}
     {/* <UseReducerComponent/> */}
     {/* <UseReducerDemo/> */}
-    <App/>
+    <Page/>
+
   </React.StrictMode>,
 )
