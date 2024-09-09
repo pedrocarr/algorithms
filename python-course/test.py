@@ -57,11 +57,29 @@
 
 # leitura()
 
-def leitura():
-    x = int(input("Digite um valor: "))
-    while x <= 0:
-        x = int(input("Digite um valor: "))
-    return x
+# def leitura():
+#     x = int(input("Digite um valor: "))
+#     while x <= 0:
+#         x = int(input("Digite um valor: "))
+#     return x
 
 
-leitura()
+# leitura()
+
+
+def main():
+    spacecraft = {"name": "Pedro"}
+    print(create_report(spacecraft))
+
+
+def create_report(spacecraft):
+    return f"""
+    ===========REPORT===========
+
+    Name: {spacecraft["name"]}
+
+    ============================
+    """
+
+
+main()
