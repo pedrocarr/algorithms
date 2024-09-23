@@ -1,6 +1,8 @@
 import { PlaywrightCrawler, Dataset } from 'crawlee';
 
 const crawler = new PlaywrightCrawler({
+  headless: false,
+
   requestHandler: async ({ parseWithCheerio, request, enqueueLinks }) => {
     console.log(`Fetching URL: ${request.url}`);
 
