@@ -6,3 +6,6 @@ const isPalindrome = (str) => {
 
 
 console.log(isPalindrome("FELIPE"))
+console.log(isPalindrome("FELIPE"))
+
+
