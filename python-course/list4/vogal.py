@@ -6,9 +6,6 @@ def vogal(n):
             return True
     return False
 
-
-
-
 # def test_vogal():
 #     assert vogal('e') == True
 # def test_vogal():
