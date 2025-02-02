@@ -16,19 +16,17 @@ function App() {
 
   const handleTextChange = (e) => {
       setTextChange(e.target.value)
-    // console.log(textChange)
+      console.log(textChange)
   }
 
-  const filteredFruits = fruitsData.filter((fruit) => {
-    return fruit.includes(textChange)
-  })
+  const filteredFruits = fruitsData.filter((fruit) => fruit.includes(textChange))
   return (
     <div className='Main'>
       <input type="text" placeholder="Search here" onChange={handleTextChange} />
 
       {filteredFruits.map((fruit) => {
 
-        return <p>{fruit}</p>
+        return <p className='fruits'>{fruit}</p>
       })}
     </div>
   )
