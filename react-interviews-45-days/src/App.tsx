@@ -1,33 +1,42 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useEffect, useMemo, useState } from "react"
 
 function App() {
-  const [count, setCount] = useState(0)
+  const getRandomColor = () => `#${Math.floor(Math.random() * 16777215).toString(16)}`
+
+  const [bgColor, setBgColor] = useState<string>(getRandomColor())
+  const [feedback, setFeedback] = useState<string>("")
+
+  useEffect(() => {
+    setBgColor(getRandomColor());
+  }, [])
+
+  const buttons = useMemo(() => {
+    const randomColors = [bgColor, getRandomColor(), getRandomColor()]
+    return randomColors.sort(()=> Math.random() - 0.5)
+  }, [bgColor])
+
+  const handleGuess = (selectedColor: string) => {
+    if (selectedColor === bgColor) {
+      setFeedback("✅ Right Answer!")
+      setTimeout(() => window.location.reload(), 2000)
+    } else {
+      setFeedback("❌ Wrong Answer! Try again.")
+    }
+  }
 
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+      <div className="main" style={{ backgroundColor: bgColor}}></div>
+      <div className="buttonsDiv" >
+      {buttons.map((color, index) => (
+          <button key={index} onClick={() => handleGuess(color)}>
+            {color}
+          </button>
+        ))}
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
+      <div className="feedback" style={{ marginTop: "20px", fontSize: "18px" }}>
+        {feedback}
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
