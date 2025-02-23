@@ -28,9 +28,7 @@ const todos = [
   },
 ];
 
-/**
- * Mock function that mimics fetching todos from a database.
- */
+
 export const fetchTodos = async (query = ""): Promise<Todo[]> => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -42,15 +40,11 @@ export const fetchTodos = async (query = ""): Promise<Todo[]> => {
     todo.title.toLowerCase().includes(query.toLowerCase())
   );
 
-  // Uncomment the line below to trigger an error
-  // throw new Error();
 
   return [...filteredTodos];
 };
 
-/**
- * Mock function that mimics adding a todo to a database.
- */
+
 export const addTodo = async (todo: Pick<Todo, "title">): Promise<Todo> => {
   await new Promise((resolve) => setTimeout(resolve, 1000));
 
@@ -60,7 +54,6 @@ export const addTodo = async (todo: Pick<Todo, "title">): Promise<Todo> => {
     completed: false,
   };
 
-  // Todo is stored in memory and cleared on page reload
   todos.push(newTodo);
 
   return newTodo;
