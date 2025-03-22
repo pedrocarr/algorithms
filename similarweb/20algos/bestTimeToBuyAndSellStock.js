@@ -3,8 +3,8 @@
  * @return {number}
  */
 function maxProfit (prices) {
-  let left = 0
-  let right = 1
+  let left = 0 // buy
+  let right = 1 // sell
 
   let maxProfit = 0
 
@@ -22,3 +22,7 @@ function maxProfit (prices) {
 
   return maxProfit
 }
+
+
+// prices = [7,6,4,3,1]
+

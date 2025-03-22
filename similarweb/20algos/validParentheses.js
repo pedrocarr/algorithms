@@ -72,12 +72,12 @@ function validParentheses(s) {
 }
 
 
-console.log(validParentheses("()")) // true
-console.log(validParentheses("{{{[[{}]]}}}")) // true
-console.log(validParentheses("{{{[{}]]}}}")) // false
-console.log(validParentheses("(]]]")) // true
-// true
-// false
+// console.log(validParentheses("()")) // true
+// console.log(validParentheses("{{{[[{}]]}}}")) // true
+// console.log(validParentheses("{{{[{}]]}}}")) // false
+// console.log(validParentheses("(]]]")) // true
+// // true
+// // false
 
 
 /**
@@ -114,36 +114,11 @@ const validParentheses2 = str => {
   return stack.length === 0
 }
 
-const result = validParentheses2("{{{[{}]]}}}")
+const result = validParentheses2("}]]}}}")
+const result4 = validParentheses2("{{{[[{}]]}}}")
 console.log('result::: ', result);
+console.log('result::: ', result4);
 
 
 
-const validParentheses3 = str => {
 
-  let mappingBrackets = new Map()
-
-  mappingBrackets.set("(", ")")
-  mappingBrackets.set("[", "]")
-  mappingBrackets.set("{", "}")
-
-  console.log('mappingBrackets::: ', mappingBrackets);
-  let stack = []
-
-  const openBrackets = '({['
-
-  for (let i = 0; i < str.length; i++) {
-    let char = str[i]
-    if (openBrackets.includes(char)) {
-      stack.push(char)
-    } else {
-      const lastOpenBracket = stack.pop()
-      if (mappingBrackets.get(lastOpenBracket) !== char) {
-        return false
-      }
-    }
-  }
-  return stack.length === 0
-}
-const result3 = validParentheses3("{{{[[{}]]}}}")
-console.log('result3::: ', result3);

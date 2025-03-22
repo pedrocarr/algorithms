@@ -13,9 +13,15 @@ function groupAnagrams(strs) {
       ans[key] = []
     }
 
+    debugger
+
     ans[key].push(s)
   }
 
   return Object.values(ans)
 
 };
+
+const result = groupAnagrams(["eat","tea","tan","ate","nat","bat"])
+
+console.log(result)

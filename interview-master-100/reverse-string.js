@@ -11,15 +11,15 @@ function reverseString(str) {
 
   if (!str || str.length < 2 || typeof str !== 'string') return
 
-  const backwards = []
+  let reversedString = ''
 
   const totalItemsIndex = str.length - 1
 
   for (let i = totalItemsIndex; i >= 0; i--) {
-      backwards.push(str[i])
+      reversedString = reversedString + str[i]
   }
 
-  return backwards.join('')
+  return reversedString
 
 }
 
