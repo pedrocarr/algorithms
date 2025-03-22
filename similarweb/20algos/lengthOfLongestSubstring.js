@@ -9,7 +9,7 @@ function lengthOfLongestSubstring() {
 
   let charSet = new Set()
 
-  for (let right = 0; right < s.length; right ++) {
+  for (let right = 0; right < s.length; right++) {
     while (charSet.has(s[right])) {
       charSet.delete(s[left])
 
