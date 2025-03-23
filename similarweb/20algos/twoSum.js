@@ -14,7 +14,7 @@ function twoSum(nums, target) {
     if (map.has(complement)) {
       return [map.get(complement), i]
     } else {
-      map.set(num) = i
+      map.set(num, i)
     }
   }
 

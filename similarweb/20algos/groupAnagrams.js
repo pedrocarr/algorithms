@@ -13,8 +13,6 @@ function groupAnagrams(strs) {
       ans[key] = []
     }
 
-    debugger
-
     ans[key].push(s)
   }
 
