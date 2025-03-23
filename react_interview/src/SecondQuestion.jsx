@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react"
 
 
-const useDebounce = (text, delay) => {
+const useDebounce = (text, delay = 500) => {
   const [debounce, setDebounce] = useState(text);
 
 
@@ -21,9 +21,9 @@ return debounce
 
 }
 
-export const SecondQuestion = () => {
+const SecondQuestion = () => {
   const [text, setText] = useState("")
-  const debouncedText = useDebounce(text, 1000)
+  const debouncedText = useDebounce(text)
 
   return (
     <div>
@@ -39,3 +39,5 @@ export const SecondQuestion = () => {
     </div>
   )
 }
+
+export default SecondQuestion;
