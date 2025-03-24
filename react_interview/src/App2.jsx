@@ -4,7 +4,9 @@ import { useEffect, useState } from "react"
 
 function App2 () {
 
-  const [text, setText] = useState("")
+
+
+
 
 
   const useDebounce = (val, delay = 500) => {
@@ -28,10 +30,10 @@ function App2 () {
     return debounce
   }
 
+  const [text, setText] = useState("")
+
 
   const debouncedText = useDebounce(text)
-
-
 
 
   return <div>
