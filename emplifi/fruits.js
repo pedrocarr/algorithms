@@ -1,16 +1,20 @@
 var fruits = ['apple', 'pear', 'banana', 'mango']
 
 
-var prints = []
+let prints = []
 
 
-for(var i = 0; i < fruits.length; i++) {
+for(let i = 0; i < fruits.length; i++) {
   const fruit = fruits[i]
-  var print = function () { console.log(fruit);}
+  let print = function () {console.log(fruit)}
   prints.push(print)
+  console.log(prints)
 }
 
+// console.log(prints)
 
-for(var a = 0; a < prints.length; a++) {
+
+for(let a = 0; a < prints.length; a++) {
   prints[a]();
 }
+// prints
