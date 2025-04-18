@@ -18,6 +18,4 @@ describe('checkIfIsLeapYear', () => {
     expect(isLeapYear.checkIfIsLeapYear(1600)).toEqual(true)
   });
 
-
-  
 });

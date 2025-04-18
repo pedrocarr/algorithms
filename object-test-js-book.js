@@ -115,5 +115,27 @@ console.log("🚀 ~ res:", res)
 reverseWords("Helloo World")
 
 
+function matchQueries(products, queries) {
+  let map = new Map();
+
+  // Build a set of product keys (sorted strings)
+  for (let prod of products) {
+    let key = prod.split('').sort().join('');
+    map.set(key, []); // initialize the array
+  }
+
+  // Group queries that match product keys
+  for (let q of queries) {
+    let key = q.split('').sort().join('');
+    if (map.has(key)) {
+      map.get(key).push(q);
+    }
+  }
 
 
+  // Only return groups that matched queries
+  return Array.from(map.values()).filter(group => group.length > 0);
+}
+
+
+matchQueries(["speed", "leetcode", "bar", "tan"], ["eepsd", "rab", "nat"])
