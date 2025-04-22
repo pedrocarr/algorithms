@@ -68,3 +68,11 @@ const main = async (pathFile: string) => {
 };
 
 main('./data.json');
+
+
+let myName
+
+
+myName = 'Pedro'
+
+let newName = (myName as string)

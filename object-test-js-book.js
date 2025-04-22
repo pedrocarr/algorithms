@@ -116,25 +116,20 @@ reverseWords("Helloo World")
 
 
 function matchQueries(products, queries) {
-  let map = new Map();
+  let map = {}
 
-  // Build a set of product keys (sorted strings)
   for (let prod of products) {
     let key = prod.split('').sort().join('');
-    map.set(key, []); // initialize the array
+    map[key] = [];
   }
 
-  // Group queries that match product keys
   for (let q of queries) {
     let key = q.split('').sort().join('');
-    if (map.has(key)) {
-      map.get(key).push(q);
+    if (map[key] !== undefined) {
+      map[key].push(q);
     }
   }
-
-
-  // Only return groups that matched queries
-  return Array.from(map.values()).filter(group => group.length > 0);
+  return Object.values(map).filter(groups => groups.length > 0)
 }
 
 
