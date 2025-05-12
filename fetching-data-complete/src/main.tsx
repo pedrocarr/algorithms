@@ -13,6 +13,7 @@ import ThreeComponent from './components/ThreeComponent.tsx'
 import FolderComponent from './components/FolderComponent.tsx'
 import App from './components/NewTermComponent.tsx'
 import Page from './components/TermTest.tsx'
+import Parent from './components/RemoveButton.tsx'
 
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
@@ -26,7 +27,8 @@ ReactDOM.createRoot(document.getElementById('root')!).render(
     {/* <PokemonComponent/> */}
     {/* <UseReducerComponent/> */}
     {/* <UseReducerDemo/> */}
-    <Page/>
+    {/* <Page/> */}
+    <Parent/>
 
   </React.StrictMode>,
 )
